@@ -7,7 +7,7 @@ class SongsController < ApplicationController
       if @artist
         @songs = @artist.songs
       else
-        redirect_to artists_path, alert: "Could not find that artist"
+        redirect_to artists_path, alert: "Artist not found"
       end
     # ../songs
     else
@@ -23,10 +23,10 @@ class SongsController < ApplicationController
         if @song
 
         else
-          redirect_to artist_songs_path(@artist), alert: "Could not find song"
+          redirect_to artist_songs_path(@artist), alert: "Song not found"
         end
       else
-        redirect_to artists_path, alert: "Could not find that artist"
+        redirect_to artists_path, alert: "Artist not found"
       end
 
     else
